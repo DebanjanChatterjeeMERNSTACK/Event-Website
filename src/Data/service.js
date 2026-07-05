@@ -13,7 +13,7 @@ const services = [
     image: serviceImg1,
     title: "Premium Catering",
     shortDesc: "Authentic Bengali & multi-cuisine catering for every occasion.",
-    desc: "Authentic Bengali cuisine and multi-cuisine menus crafted by expert chefs. We provide specialized food services for traditional weddings, small home gatherings, and corporate events with unmatched hygiene and authentic flavors that your guests will remember forever.",
+    desc: "<p>Authentic Bengali cuisine and multi-cuisine menus crafted by expert chefs. We provide specialized food services for traditional weddings, small home gatherings, and corporate events with unmatched hygiene and authentic flavors that your guests will remember forever.</p>",
   },
   {
     id: 2,

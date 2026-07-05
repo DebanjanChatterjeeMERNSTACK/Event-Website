@@ -1,14 +1,14 @@
 import React from "react";
 import blogImage from "../assets/blogimg1.jpg";
 import Tabbar from "../componants/Tabbar.jsx";
-import service from "../Data/service.js"
+import service from "../Data/service.js";
 import { useParams } from "react-router-dom";
 
 const ServiceDetails = () => {
- const { id } = useParams();
-const serviceId = Number(id);
+  const { id } = useParams();
+  const serviceId = Number(id);
 
-const data = service.find((item) => item.id === serviceId);
+  const data = service.find((item) => item.id === serviceId);
 
   return (
     <>
@@ -19,14 +19,15 @@ const data = service.find((item) => item.id === serviceId);
           <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
             {/* Left */}
             <div className="max-w-xl">
-
               <h1 className="text-4xl md:text-5xl font-black text-slate-800 leading-tight mt-6">
                 {data.title}
               </h1>
 
               <div className="flex items-center gap-4 mt-8">
                 <div>
-                   <p className="font-semibold text-md italic text-gray-500">{data.shortDesc}</p>
+                  <p className="font-semibold text-md italic text-gray-500">
+                    {data.shortDesc}
+                  </p>
                 </div>
               </div>
             </div>
@@ -47,9 +48,10 @@ const data = service.find((item) => item.id === serviceId);
               Service Details
             </h2>
 
-            <p className="text-gray-600 text-lg leading-9">
-             { data.desc}
-            </p>
+         <div
+              className="text-gray-600 text-lg leading-9"
+              dangerouslySetInnerHTML={{ __html: data.desc }}
+            />
           </div>
         </div>
       </section>

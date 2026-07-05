@@ -7,7 +7,6 @@ import services from "../Data/service";
 const ServiceSection = () => {
   return (
     <section className="w-full bg-[#f5f5f5] py-16 px-4">
-     
       <div className="text-center mb-14">
         <p className="text-green-600 text-2xl mb-2 ">Our Services</p>
         <h2 className="text-[42px] font-light text-[#222] leading-none">
@@ -15,7 +14,6 @@ const ServiceSection = () => {
         </h2>
       </div>
 
-     
       <div className="max-w-7xl mx-auto">
         <Swiper
           modules={[Autoplay]}
@@ -54,9 +52,10 @@ const ServiceSection = () => {
                     </h3>
 
                     {/* ডেসক্রিপশন (প্রথম ১০০টি অক্ষর দেখাবে এবং শেষে ... যোগ হবে) */}
-                    <p className="text-[#666] text-[14px] leading-6 mt-3 px-1">
-                      {service.desc.slice(0, 70)}...
-                    </p>
+                    <div
+                      className="text-[#666] text-[14px] leading-6 mt-3 px-1"
+                      dangerouslySetInnerHTML={{ __html: service.desc.slice(0,60) }}
+                    />
                   </div>
 
                   {/* নতুন ট্যাবে খোলার জন্য Read More লিঙ্ক */}
@@ -65,7 +64,8 @@ const ServiceSection = () => {
                       to={`/servicedel/${service.id}`}
                       className="inline-block text-green-600 hover:text-green-800 font-bold text-[14px] transition duration-200 border-b border-transparent hover:border-green-800 pb-0.5"
                     >
-                      Read more <i className="fa-solid fa-arrow-right-long ms-1 text-[12px]"></i>
+                      Read more{" "}
+                      <i className="fa-solid fa-arrow-right-long ms-1 text-[12px]"></i>
                     </NavLink>
                   </div>
                 </div>
